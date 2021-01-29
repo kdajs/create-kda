@@ -1,0 +1,17 @@
+type: node
+
+ignoreNotice: true
+
+paths:
+  - dist
+  - package.json
+
+only:
+  test:
+    - script:
+      - npm install --production
+      - npm run release:test
+  master:
+    - script:
+      - npm install --production
+      - npm run release

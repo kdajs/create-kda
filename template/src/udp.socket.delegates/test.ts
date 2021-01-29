@@ -1,0 +1,3 @@
+export const Test: UDPSocketDelegate = (state, params, callbackComplete, callbackError): void => {
+  // ...
+}

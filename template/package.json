@@ -1,0 +1,30 @@
+{
+  "name": "{{ name }}",
+  "main": "./dist/app.js",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -b tsconfig.json",
+    "debug": "npm run build && cross-env NODE_ENV=test node --inspect-brk=8080 .",
+    "start": "npm run build && cross-env NODE_ENV=test node .",
+    "start:production": "npm run build && cross-env NODE_ENV=production node .",
+    "release:test": "kda pm2exec test",
+    "release:production": "kda pm2exec production"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.10.4",
+    "kda": "0.0.0-alpha.6",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.18.0",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "typescript": "^4.1.3"
+  }
+}
