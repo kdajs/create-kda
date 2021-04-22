@@ -1,6 +1,6 @@
 {
   "name": "create-kda",
-  "version": "0.0.0-alpha.5",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": "https://github.com/kdajs/create-kda.git",
   "author": "lijialiang",
@@ -9,7 +9,7 @@
     "create-kda": "./index.js"
   },
   "scripts": {
-    "release": "npm publish --tag next"
+    "release": "npm publish"
   },
   "dependencies": {
     "execa": "^5.0.0",
