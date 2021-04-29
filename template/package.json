@@ -14,7 +14,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "dayjs": "^1.10.4",
-    "kda": "0.0.0-alpha.7",
+    "kda": "0.0.2",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
