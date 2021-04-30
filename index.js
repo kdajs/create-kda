@@ -36,14 +36,18 @@ const error = message => {
     // 重命名隐藏文件
     if (fileNameHidden) {
       distFile = distFile.replace(fileName, fileNameHidden)
-      console.log(distFile);
     }
 
     const content = mustache.render(fs.readFileSync(file, 'utf8'), {
       name: projectName
     })
+
     fs.outputFileSync(distFile, content, 'utf8')
   }
 
+  // 安装默认依赖
   await execa.command('yarn install', { cwd: projectPath, stdio: 'inherit' })
+
+  // 安装最新版本 kda
+  await execa.command('yarn add kda', { cwd: projectPath, stdio: 'inherit' })
 })()
