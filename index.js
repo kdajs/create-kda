@@ -25,7 +25,20 @@ const error = message => {
     const fileName = path.basename(file)
     if (['.DS_Store'].indexOf(fileName) >= 0 || fs.statSync(file).isDirectory()) continue
 
-    const distFile = path.normalize(file).replace(templatePath, projectPath)
+    // 隐藏文件
+    let fileNameHidden
+    if (fileName[0] === '_') {
+      fileNameHidden = fileName.replace('_', '.')
+    }
+
+    let distFile = path.normalize(file).replace(templatePath, projectPath)
+
+    // 重命名隐藏文件
+    if (fileNameHidden) {
+      distFile = distFile.replace(fileName, fileNameHidden)
+      console.log(distFile);
+    }
+
     const content = mustache.render(fs.readFileSync(file, 'utf8'), {
       name: projectName
     })
