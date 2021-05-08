@@ -1,5 +1,5 @@
-import * as day from 'dayjs'
-import * as shortid from 'shortid'
+import day from 'dayjs'
+import shortid from 'shortid'
 
 function today (): string {
   return day().format('YYYY-MM-DD')

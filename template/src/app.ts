@@ -10,22 +10,15 @@ import {
   createWebsocket
 } from 'kda'
 
-const startServer = async (): Promise<void> => {
-  const config = createConfig()
+const config = createConfig()
+const logger = createLogger(config.path.log)
+// const models = await createModels()
+const commonState: CommonState = { config, logger, utils }
+const udpSocketClients = createUDPSocketClients(commonState)
+const httpState: HttpState = { ...commonState, udpSocketClients }
 
-  const websocket = createWebsocket()
-  const logger = createLogger(config.path.log)
-  const models = await createModels()
-  const commonState: CommonState = { config, models, logger, websocket, utils }
-  const udpSocketClients = createUDPSocketClients(commonState)
-  const httpState: HttpState = { ...commonState, udpSocketClients }
-
-  createHttpServer({
-    state: httpState,
-    controllers,
-    routerDelegates
-  }, 3000)
-}
-
-startServer()
-  .catch(error => console.log(error))
+createHttpServer({
+  state: httpState,
+  controllers,
+  routerDelegates
+}, 3000)

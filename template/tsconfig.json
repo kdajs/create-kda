@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "module": "commonjs",
-    "target": "ES2016",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2017",
     "strictNullChecks": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
-    "sourceMap": true,
-    "declaration": true,
+    "sourceMap": false,
+    "declaration": false,
     "outDir": "./dist"
   },
   "include": [

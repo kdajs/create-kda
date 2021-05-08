@@ -12,6 +12,7 @@
     "release": "npm publish"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",

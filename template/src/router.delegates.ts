@@ -1,7 +1,7 @@
-import Test from './router.delegates/test'
+import AppRouter from './router.delegates/app.router'
 
 const routerDelegates: RouterDelegates = [
-  Test
+  AppRouter
 ]
 
 export default routerDelegates

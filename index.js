@@ -5,6 +5,7 @@ const fs = require('fs-extra')
 const execa = require('execa')
 const glob = require('glob')
 const mustache = require('mustache')
+const axios = require('axios')
 const projectPath = process.cwd()
 
 const error = message => {
@@ -20,6 +21,8 @@ const error = message => {
 
   const templatePath = path.resolve(__dirname, './template')
   const templateFiles = glob.sync(path.resolve(templatePath, './**/*'), { dot: true })
+
+  const { data: { latest: kdaLatestVersion } } = await axios.get('https://registry.npmjs.org/-/package/kda/dist-tags')
 
   for (const file of templateFiles) {
     const fileName = path.basename(file)
@@ -39,7 +42,8 @@ const error = message => {
     }
 
     const content = mustache.render(fs.readFileSync(file, 'utf8'), {
-      name: projectName
+      name: projectName,
+      kdaVersion: kdaLatestVersion
     })
 
     fs.outputFileSync(distFile, content, 'utf8')
@@ -47,7 +51,4 @@ const error = message => {
 
   // 安装默认依赖
   await execa.command('yarn install', { cwd: projectPath, stdio: 'inherit' })
-
-  // 安装最新版本 kda
-  await execa.command('yarn add kda', { cwd: projectPath, stdio: 'inherit' })
 })()

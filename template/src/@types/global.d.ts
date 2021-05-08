@@ -1,5 +1,5 @@
-import * as KDA from 'kda'
-import User from './models/user'
+import KDA from 'kda'
+import User from '../models/user'
 
 declare global {
   const enum NODE_ENV {
@@ -26,8 +26,7 @@ declare global {
   }
 
   interface CommonState extends KDA.State {
-    websocket: KDA.Websocket
-    models: Models
+    // models: Models
     utils: Utils
   }
 
@@ -36,7 +35,9 @@ declare global {
   interface UDPSocketClients extends KDA.UDPSocketClients {
     Test: UDPSocketClient
   }
+
   type UDPSocketDelegate = KDA.UDPSocketDelegate<CommonState>
+
   type UDPSocketDelegates = KDA.UDPSocketDelegates
 
   // Http
@@ -51,5 +52,6 @@ declare global {
   }
 
   type RouterDelegate = KDA.RouterDelegate<Controllers>
+
   type RouterDelegates = KDA.RouterDelegates
 }
