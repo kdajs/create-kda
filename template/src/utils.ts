@@ -6,7 +6,7 @@ function today (): string {
 }
 
 function now (): string {
-  return day().format('YYYY-MM-DD hh:mm:ss')
+  return day().format('YYYY-MM-DD HH:mm:ss')
 }
 
 function uuid (): string {
