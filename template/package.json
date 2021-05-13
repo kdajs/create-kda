@@ -8,14 +8,17 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build:swc": "npm run clean && swc ./src -d dist",
-    "build:tsc": "npm run clean && tsc -b tsconfig.json",
-    "debug": "npm run build:swc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node --inspect-brk=8080 .",
-    "start": "npm run build:swc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node .",
-    "test": "npm run build:tsc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node .",
-    "start:production": "npm run build:tsc && cross-env NODE_ENV=production node --es-module-specifier-resolution=node .",
+    "build:swc": "swc ./src -d dist",
+    "build:tsc": "tsc -b tsconfig.json",
+    "serve:test": "kda serve test",
+    "serve:test:debug": "kda serve test --debug=8080",
+    "serve:prod": "kda serve production",
+    "serve:prod:debug": "kda serve production --debug=8080",
+    "start": "run-s clean build:swc serve:test",
+    "debug:test": "run-s clean build:swc serve:test:debug",
+    "debug:prod": "run-s clean build:swc serve:prod:debug",
     "release:test": "kda pm2exec test --reload --esmodule",
-    "release:production": "kda pm2exec production --reload --esmodule"
+    "release:prod": "kda pm2exec production --reload --esmodule"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
@@ -33,6 +36,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.1.3"
   }
 }
