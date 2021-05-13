@@ -34,6 +34,7 @@ build:
     - yyci_office
   script:
     - yarn global add @yy/rv-cli
+    - export RV_TOKEN=$RV_TOKEN
     - rv .
 
 # 发布 - 测试环境
