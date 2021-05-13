@@ -8,9 +8,11 @@
   "bin": {
     "create-kda": "./index.js"
   },
-  "scripts": {
-    "release": "npm publish"
-  },
+  "files": [
+    "index.js",
+    "template"
+  ],
+  "scripts": {},
   "dependencies": {
     "axios": "^0.21.1",
     "execa": "^5.0.0",
