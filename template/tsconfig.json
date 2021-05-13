@@ -12,7 +12,8 @@
     "noImplicitAny": true,
     "sourceMap": false,
     "declaration": false,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "diagnostics": true
   },
   "include": [
     "src/**/*.ts"

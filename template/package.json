@@ -4,16 +4,18 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">= 14"
+    "node": ">=14"
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc -b tsconfig.json",
-    "debug": "npm run build && cross-env NODE_ENV=test node --es-module-specifier-resolution=node --inspect-brk=8080 .",
-    "start": "npm run build && cross-env NODE_ENV=test node --es-module-specifier-resolution=node .",
-    "start:production": "npm run build && cross-env NODE_ENV=production node --es-module-specifier-resolution=node .",
-    "release:test": "kda pm2exec test --esmodule",
-    "release:production": "kda pm2exec production --esmodule"
+    "build:swc": "npm run clean && swc ./src -d dist",
+    "build:tsc": "npm run clean && tsc -b tsconfig.json",
+    "debug": "npm run build:swc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node --inspect-brk=8080 .",
+    "start": "npm run build:swc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node .",
+    "test": "npm run build:tsc && cross-env NODE_ENV=test node --es-module-specifier-resolution=node .",
+    "start:production": "npm run build:tsc && cross-env NODE_ENV=production node --es-module-specifier-resolution=node .",
+    "release:test": "kda pm2exec test --reload --esmodule",
+    "release:production": "kda pm2exec production --reload --esmodule"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
@@ -22,6 +24,8 @@
     "shortid": "^2.2.16"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.40",
+    "@swc/core": "^1.2.57",
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.18.0",
