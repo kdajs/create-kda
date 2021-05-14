@@ -26,7 +26,7 @@ build:
   script:
     - cp -r /data/kda-deps/node_modules/ ./node_modules/
     - yarn install
-    - yarn build:swc
+    - yarn build
 
 .release:
   stage: release
