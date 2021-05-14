@@ -5,6 +5,9 @@
   "repository": "https://github.com/kdajs/create-kda.git",
   "author": "lijialiang",
   "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
   "bin": {
     "create-kda": "./index.js"
   },

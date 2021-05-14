@@ -3,7 +3,6 @@
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "target": "ES2017",
     "strictNullChecks": true,

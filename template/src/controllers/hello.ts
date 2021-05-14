@@ -1,4 +1,6 @@
-const Hello: Controller = async (ctx, next) => {
+import { Controller } from 'kda'
+
+const Hello: Controller<HttpState> = async (ctx, next) => {
   ctx.body = `${ctx.state.utils.now()} - Hello, KDA!`
 }
 

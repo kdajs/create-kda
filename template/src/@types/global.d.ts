@@ -32,26 +32,13 @@ declare global {
 
   // UDP Socket
   type UDPSocketClient = KDA.UDPSocketClient
+
   interface UDPSocketClients extends KDA.UDPSocketClients {
     Test: UDPSocketClient
   }
-
-  type UDPSocketDelegate = KDA.UDPSocketDelegate<CommonState>
-
-  type UDPSocketDelegates = KDA.UDPSocketDelegates
 
   // Http
   interface HttpState extends CommonState {
     udpSocketClients: UDPSocketClients
   }
-
-  type Controller = KDA.Controller<HttpState>
-
-  interface Controllers extends KDA.Controllers {
-    Hello: Controller
-  }
-
-  type RouterDelegate = KDA.RouterDelegate<Controllers>
-
-  type RouterDelegates = KDA.RouterDelegates
 }

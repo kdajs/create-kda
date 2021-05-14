@@ -1,5 +1,6 @@
 import { createModels } from 'kda'
 import User from './models/user'
+import { NODE_ENV } from './@types/global.d'
 
 const testConfig = {
   host: 'test.test.com',
