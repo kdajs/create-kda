@@ -1,4 +1,4 @@
-import KDA from 'kda'
+import  { State, Model, UDPSocketClient } from 'kda'
 import User from '../models/user'
 
 export const enum NODE_ENV {
@@ -21,23 +21,19 @@ declare global {
     uuid: () => string
   }
 
-  interface Models extends KDA.Models {
-    User: KDA.Model<User>
+  interface Models {
+    User: Model<User>
   }
 
-  interface CommonState extends KDA.State {
+  interface CommonState extends State {
     // models: Models
     utils: Utils
   }
 
-  // UDP Socket
-  type UDPSocketClient = KDA.UDPSocketClient
-
-  interface UDPSocketClients extends KDA.UDPSocketClients {
+  interface UDPSocketClients {
     Test: UDPSocketClient
   }
 
-  // Http
   interface HttpState extends CommonState {
     udpSocketClients: UDPSocketClients
   }
