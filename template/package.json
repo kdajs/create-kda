@@ -8,7 +8,9 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "swc ./src -d dist",
+    "json.schema": "kda json.schema ./src/@types/json.schema.d.ts",
+    "build:ts": "swc ./src -d dist",
+    "build": "run-s json.schema build:ts",
     "type:check": "tsc -b tsconfig.json",
     "check": "run-s type:check",
     "serve:test": "kda serve test",
@@ -27,6 +29,7 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "dayjs": "^1.10.4",
+    "jsonschema": "^1.4.0",
     "kda": "{{kdaVersion}}",
     "shortid": "^2.2.16"
   },

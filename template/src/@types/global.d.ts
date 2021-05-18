@@ -7,6 +7,21 @@ export const enum NODE_ENV {
   Production = 'production'
 }
 
+export interface Utils {
+  now: () => string
+  today: () => string
+  uuid: () => string
+  jsonSchemaValidator: (data: any, schema: object) => string | undefined
+}
+
+export interface Models {
+  User: Model<User>
+}
+
+export interface UDPSocketClients {
+  Test: UDPSocketClient
+}
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -15,23 +30,9 @@ declare global {
     }
   }
 
-  interface Utils {
-    now: () => string
-    today: () => string
-    uuid: () => string
-  }
-
-  interface Models {
-    User: Model<User>
-  }
-
   interface CommonState extends State {
     // models: Models
     utils: Utils
-  }
-
-  interface UDPSocketClients {
-    Test: UDPSocketClient
   }
 
   interface HttpState extends CommonState {

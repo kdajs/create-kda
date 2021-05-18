@@ -1,3 +1,4 @@
+import { UDPSocketClients } from './@types/global.d'
 import router from './router'
 import createModels from './models'
 import utils from './utils'

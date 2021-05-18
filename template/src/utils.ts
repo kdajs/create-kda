@@ -1,5 +1,7 @@
+import { Utils } from './@types/global.d'
 import day from 'dayjs'
 import shortid from 'shortid'
+import { Validator } from 'jsonschema'
 
 function today (): string {
   return day().format('YYYY-MM-DD')
@@ -13,10 +15,21 @@ function uuid (): string {
   return new Date().getTime().toString() + shortid.generate()
 }
 
+const validator = new Validator()
+function jsonSchemaValidator (data: any, schema: object): string | undefined {
+  let errors: string | undefined
+  const result = validator.validate(data, schema, { allowUnknownAttributes: true })
+  if (result.errors.length > 0) {
+    errors = result.errors.map(v => v.message).join('\n')
+  }
+  return errors
+}
+
 const utils: Utils = {
   now,
   today,
-  uuid
+  uuid,
+  jsonSchemaValidator
 }
 
 export default utils
