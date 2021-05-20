@@ -1,4 +1,3 @@
-import { Utils } from './@types/global.d'
 import day from 'dayjs'
 import shortid from 'shortid'
 import { Validator } from 'jsonschema'
@@ -25,11 +24,9 @@ function jsonSchemaValidator (data: any, schema: object): string | undefined {
   return errors
 }
 
-const utils: Utils = {
+export default {
   now,
   today,
   uuid,
   jsonSchemaValidator
 }
-
-export default utils

@@ -1,5 +1,5 @@
 import { UDPSocketController } from 'kda'
 
-export const Test: UDPSocketController<CommonState> = (state, params, callbackComplete, callbackError): void => {
+export const Test: UDPSocketController<CustomState> = (state, params, callbackComplete, callbackError) => {
   // ...
 }

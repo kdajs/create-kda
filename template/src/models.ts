@@ -1,5 +1,4 @@
-import { Models, NODE_ENV } from './@types/global.d'
-import { createModels } from 'kda'
+import { createModels, ModelsRepository } from 'kda'
 import User from './models/user'
 
 const testConfig = {
@@ -33,13 +32,15 @@ const getConfig = (): {
   }
 }
 
-export default async function (): Promise<Models> {
-  return await new Promise(resolve => {
-    resolve(createModels<Models>({
-      ...getConfig(),
-      entities: {
-        User
-      }
-    }))
-  })
+export interface ModelsEntity {
+  User: User
 }
+
+export type Models = ModelsRepository<ModelsEntity>
+
+export default await createModels<ModelsEntity>({
+  ...getConfig(),
+  entities: {
+    User
+  }
+})

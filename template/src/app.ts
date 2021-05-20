@@ -1,36 +1,10 @@
-import { UDPSocketClients } from './@types/global.d'
+// import models from './models'
 import router from './router'
-import createModels from './models'
 import utils from './utils'
-import {
-  createConfig,
-  createLogger,
-  createHttpServer,
-  createUDPSocketServer,
-  createUDPSocketClient
-} from 'kda'
+import clients from './clients'
+import { createConfig, createState, createServer } from 'kda'
 
 const config = createConfig()
-const logger = createLogger(config.path.log)
-// const models = await createModels()
-const commonState: CommonState = { config, logger, utils }
+const state = createState(config, { utils })
 
-const udpSocketServer = createUDPSocketServer({
-  state: commonState,
-  port: 3001,
-  router
-})
-
-const udpSocketClients: UDPSocketClients = {
-  Test: createUDPSocketClient({
-    server: udpSocketServer,
-    port: 3001
-  })
-}
-
-const httpState: HttpState = { ...commonState, udpSocketClients }
-
-createHttpServer({
-  state: httpState,
-  router
-}, 3000)
+createServer({ state, router }).start(3000, clients)
