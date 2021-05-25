@@ -1,5 +1,11 @@
+import 'kda'
 import utils from '../utils'
 import { Models } from '../models'
+
+interface CustomState {
+  // models: Models
+  utils: typeof utils
+}
 
 declare global {
   export const enum NODE_ENV {
@@ -13,10 +19,5 @@ declare global {
       [key: string]: string | undefined
       NODE_ENV: NODE_ENV
     }
-  }
-
-  interface CustomState {
-    // models: Models
-    utils: typeof utils
   }
 }
