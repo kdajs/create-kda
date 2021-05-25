@@ -1,15 +1,15 @@
 {
   "name": "create-kda",
-  "version": "0.0.13",
-  "main": "index.js",
+  "version": "0.0.14",
+  "main": "index.mjs",
   "repository": "https://github.com/kdajs/create-kda.git",
-  "author": "lijialiang",
+  "author": "lijialiang@joyy.sg",
   "license": "MIT",
   "engines": {
     "node": ">=14"
   },
   "bin": {
-    "create-kda": "./index.js"
+    "create-kda": "./index.mjs"
   },
   "files": [
     "index.js",
@@ -18,7 +18,6 @@
   "scripts": {},
   "dependencies": {
     "axios": "^0.21.1",
-    "execa": "^5.0.0",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
     "mustache": "^4.1.0"
