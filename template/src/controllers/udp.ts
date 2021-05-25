@@ -1,5 +1,5 @@
-import { UDPSocketController } from 'kda'
+import { createUDPSocketController } from 'kda'
 
-export const Test: UDPSocketController = (state, params, callbackComplete, callbackError) => {
+export const Test = createUDPSocketController((store, params, resolve, reject) => {
   // ...
-}
+})
