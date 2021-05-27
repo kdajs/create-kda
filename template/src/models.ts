@@ -36,8 +36,6 @@ export interface ModelsEntity {
   User: User
 }
 
-export type Models = ModelsRepository<ModelsEntity>
-
 export default await createModels<ModelsEntity>({
   ...getConfig(),
   entities: {

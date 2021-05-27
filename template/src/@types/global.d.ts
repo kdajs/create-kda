@@ -1,10 +1,12 @@
 import 'kda'
+import models from '../models'
 import utils from '../utils'
-import { Models } from '../models'
 
-interface CustomState {
-  // models: Models
-  utils: typeof utils
+declare module 'kda' {
+  interface CustomStore {
+    // models: typeof models
+    utils: typeof utils
+  }
 }
 
 declare global {
