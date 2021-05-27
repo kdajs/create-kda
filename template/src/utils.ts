@@ -24,9 +24,19 @@ function jsonSchemaValidator (data: any, schema: object): string | undefined {
   return errors
 }
 
+async function sleep (time: number = 1000): Promise<void> {
+  await new Promise(resolve => setTimeout(resolve, time))
+}
+
+function random (n: number, m: number): number {
+  return Math.floor(Math.random() * (m - n + 1) + n)
+}
+
 export default {
   now,
   today,
   uuid,
-  jsonSchemaValidator
+  jsonSchemaValidator,
+  sleep,
+  random
 }
