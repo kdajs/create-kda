@@ -1,5 +1,5 @@
 import 'kda'
-import models from '../models'
+// import models from '../models'
 import utils from '../utils'
 
 declare module 'kda' {
