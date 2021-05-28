@@ -28,7 +28,6 @@
     "pre-commit": "npm run check"
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
     "dayjs": "^1.10.4",
     "jsonschema": "^1.4.0",
     "kda": "{{kdaVersion}}",

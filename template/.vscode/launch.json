@@ -7,14 +7,14 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "DEBUG",
+      "name": "debug",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run-script",
-        "debug"
+        "debug:test"
       ],
       "port": 8080
     }
