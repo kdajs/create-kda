@@ -19,6 +19,7 @@
     "server:prod": "kda server production",
     "server:prod:debug": "kda server production --debug=8080",
     "start": "run-s clean build:ts server:test",
+    "debug": "run-s clean build:ts server:test:debug",
     "debug:test": "run-s clean build server:test:debug",
     "debug:prod": "run-s clean build server:prod:debug",
     "release:test": "kda pm2exec test --reload --esmodule",
