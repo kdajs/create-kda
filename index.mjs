@@ -24,6 +24,7 @@ const templatePath = path.resolve(dirname, 'template')
 const templateFiles = glob.sync(path.resolve(templatePath, './**/*'), { dot: true })
 
 const { data: { latest: kdaLatestVersion } } = await axios.get('https://registry.npmjs.org/-/package/kda/dist-tags')
+const { data: { latest: kdaBuildLatestVersion } } = await axios.get('https://registry.npmjs.org/-/package/kda-build/dist-tags')
 
 for (const file of templateFiles) {
   const fileName = path.basename(file)
@@ -44,7 +45,8 @@ for (const file of templateFiles) {
 
   const content = mustache.render(fs.readFileSync(file, 'utf8'), {
     name: projectName,
-    kdaVersion: kdaLatestVersion
+    kdaVersion: kdaLatestVersion,
+    kdaBuildVersion: kdaBuildLatestVersion
   })
 
   fs.outputFileSync(distFile, content, 'utf8')

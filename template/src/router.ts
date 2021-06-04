@@ -1,7 +1,7 @@
 import { createRouter, createUploadController } from 'kda'
-import Hello from './controllers/hello'
-import { TestClientPath } from './@types/kda.d'
-import { Test1, Test2 } from './controllers/udp'
+import Hello from '@/controllers/hello'
+import { TestClientPath } from '@/@types/kda.d'
+import { Test1, Test2 } from '@/controllers/udp'
 
 const router = createRouter()
 const uploadController = createUploadController()

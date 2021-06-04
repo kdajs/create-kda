@@ -1,7 +1,7 @@
 import 'kda'
-// import models from '../models'
-import utils from '../utils'
-import clients from '../clients'
+// import models from '@/models'
+import utils from '@/utils'
+import clients from '@/clients'
 
 declare module 'kda' {
   interface InjectContext {

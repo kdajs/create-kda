@@ -12,7 +12,7 @@
     "create-kda": "./index.mjs"
   },
   "files": [
-    "index.js",
+    "index.mjs",
     "template"
   ],
   "scripts": {},
