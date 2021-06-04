@@ -7,9 +7,9 @@
     "node": ">=14"
   },
   "scripts": {
-    "json.schema": "kda json.schema ./src/@types/json.schema.d.ts",
+    "build:json.schema": "kda-build json.schema ./src/@types/json.schema.d.ts",
     "build:ts": "kda-build",
-    "build": "run-s json.schema build:ts",
+    "build": "run-s build:json.schema build:ts",
     "check:type": "tsc",
     "check:format": "eslint ./src/**/*.ts",
     "check": "run-s check:type check:format",
