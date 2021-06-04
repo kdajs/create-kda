@@ -1,6 +1,6 @@
 # create-kda
 
-Create KDA Project quickly and easily
+Create KDA Project quickly and easily.
 
 ```sh
 $ mkdir kda-test
