@@ -15,7 +15,9 @@
     "index.mjs",
     "template"
   ],
-  "scripts": {},
+  "scripts": {
+    "test": "rm -rf __test__ && mkdir __test__ && cd __test__ && node ../index.mjs"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "fs-extra": "^9.1.0",
