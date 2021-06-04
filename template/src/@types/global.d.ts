@@ -1,13 +1,4 @@
-import 'kda'
-// import models from '../models'
-import utils from '../utils'
-
-declare module 'kda' {
-  interface CustomStore {
-    // models: typeof models
-    utils: typeof utils
-  }
-}
+export {}
 
 declare global {
   export const enum NODE_ENV {

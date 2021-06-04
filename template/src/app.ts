@@ -2,7 +2,7 @@ import './router'
 import './clients'
 // import models from './models'
 import utils from './utils'
-import { createStore, createServer } from 'kda'
+import clients from './clients'
+import { createServer } from 'kda'
 
-createStore({ utils })
-createServer().start(3000)
+createServer({ utils, clients }).start(3000)

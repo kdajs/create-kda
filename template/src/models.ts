@@ -1,12 +1,8 @@
-import { createModels, ModelsRepository } from 'kda'
+import { createModels } from 'kda'
 import config from './config'
 import User from './models/user'
 
-export interface ModelsEntity {
-  User: User
-}
-
-export default await createModels<ModelsEntity>({
+export default await createModels({
   ...config.DB,
   entities: {
     User
