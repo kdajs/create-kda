@@ -7,9 +7,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "build:json.schema": "kda-build json.schema ./src/@types/json.schema.d.ts",
     "build:ts": "kda-build",
-    "build": "run-s build:json.schema build:ts",
+    "build": "run-s build:ts",
     "check:type": "tsc",
     "check:format": "eslint ./src/**/*.ts",
     "check": "run-s check:type check:format",
@@ -17,8 +16,8 @@
     "server:test:debug": "kda server test --debug=8080",
     "server:prod": "kda server production",
     "server:prod:debug": "kda server production --debug=8080",
-    "start": "run-s build:ts server:test",
-    "debug": "run-s build:ts server:test:debug",
+    "start": "run-s build server:test",
+    "debug": "run-s build server:test:debug",
     "debug:test": "run-s build server:test:debug",
     "debug:prod": "run-s build server:prod:debug",
     "release:test": "kda pm2exec test --reload --esmodule",
@@ -29,7 +28,6 @@
   },
   "dependencies": {
     "dayjs": "^1.10.4",
-    "jsonschema": "^1.4.0",
     "kda": "{{kdaVersion}}",
     "shortid": "^2.2.16"
   },

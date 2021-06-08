@@ -5,9 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
-      "request": "launch",
       "name": "debug",
+      "type": "pwa-node",
+      "sourceMaps": true,
+      "request": "launch",
       "skipFiles": [
         "<node_internals>/**"
       ],
@@ -16,7 +17,10 @@
         "run-script",
         "debug"
       ],
-      "port": 8080
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/src/**",
+        "!**/node_modules/**"
+      ]
     }
   ]
 }
