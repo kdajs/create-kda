@@ -1,3 +1,4 @@
+// https://github.com/gcanti/io-ts/blob/master/index.md
 import * as t from 'io-ts'
 
 export const Test = t.type({

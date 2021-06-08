@@ -1,8 +1,8 @@
-import { createUDPSocketClient } from 'kda'
+import { createUDPClient } from 'kda'
 import { TestClientSend } from '@/@types/kda.d';
 
 export default {
-  Test: createUDPSocketClient<TestClientSend>({
+  Test: createUDPClient<TestClientSend>({
     port: 3001
   })
 }

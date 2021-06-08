@@ -1,3 +1,5 @@
+import { NODE_ENV } from '@/@types/global.d'
+
 const TEST = {
   DB: {
     host: 'test.test.com',

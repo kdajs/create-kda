@@ -11,6 +11,6 @@ export default class User {
   @Column()
   code: number
 
-  // @Column()
-  // time: string
+  @Column({ name: 'time' })
+  time: string
 }
