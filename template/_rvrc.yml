@@ -14,4 +14,4 @@ only:
   master:
     - script:
       - npm install --production
-      - npm run release:prod
+      - npm run release:production

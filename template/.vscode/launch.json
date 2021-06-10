@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "debug",
-      "type": "pwa-node",
+      "type": "node",
       "sourceMaps": true,
       "request": "launch",
       "skipFiles": [
@@ -15,11 +15,7 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run-script",
-        "debug"
-      ],
-      "resolveSourceMapLocations": [
-        "${workspaceFolder}/src/**",
-        "!**/node_modules/**"
+        "start"
       ]
     }
   ]
