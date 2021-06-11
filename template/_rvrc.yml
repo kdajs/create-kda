@@ -5,6 +5,7 @@ ignoreNotice: true
 paths:
   - dist
   - package.json
+  - .env.*
 
 only:
   test:
