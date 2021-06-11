@@ -24,8 +24,11 @@
   },
   "dependencies": {
     "dayjs": "^1.10.4",
+    "fp-ts": "^2.10.5",
+    "io-ts": "^2.2.16",
     "kda": "{{kdaVersion}}",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "typeorm": "^0.2.34"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.13.0",

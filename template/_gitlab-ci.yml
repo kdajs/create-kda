@@ -3,9 +3,6 @@ image: harbor.duowan.com/ued/kda
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-before_script:
-  - yarn config set registry https://npm-registry.duowan.com
-
 stages:
   - build
   - release
@@ -24,17 +21,15 @@ build:
     - dist
     - package.json
   script:
-    - cp -r /data/kda-deps/node_modules/ ./node_modules/
-    - yarn install
-    - yarn build
+    - pnpm install
+    - pnpm build
 
 .release:
   stage: release
   tags:
     - yyci_office
   script:
-    - yarn global add @yy/rv-cli
-    - export RV_TOKEN=$RV_TOKEN
+    - pnpm add @yy/rv-cli --registry=https://npm-registry.duowan.com --global
     - rv .
 
 # 发布 - 测试环境
