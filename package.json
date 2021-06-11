@@ -1,6 +1,6 @@
 {
   "name": "create-kda",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "main": "index.mjs",
   "repository": "https://github.com/kdajs/create-kda.git",
   "author": "lijialiang@joyy.sg",
