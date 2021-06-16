@@ -9,6 +9,8 @@ declare module 'kda' {
     utils: typeof utils
     clients: typeof clients
   }
+
+  interface CustomState {}
 }
 
 export const enum TestClientPath {
