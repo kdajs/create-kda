@@ -7,15 +7,15 @@
     "node": ">=14"
   },
   "scripts": {
-    "build:ts": "kda-build",
-    "build": "run-s build:ts",
+    "build:dev": "kda-build ts --sourceMap",
+    "build:release": "kda-build ts",
     "check:type": "tsc",
     "check:format": "eslint ./src/**/*.ts",
     "check": "run-s check:type check:format",
     "server:test": "kda server test",
     "server:production": "kda server production",
-    "start": "run-s build server:test",
-    "start:production": "run-s build server:production",
+    "start": "run-s build:dev server:test",
+    "start:production": "run-s build:dev server:production",
     "release:test": "kda pm2exec test --reload --esmodule",
     "release:production": "kda pm2exec production --reload --esmodule"
   },
