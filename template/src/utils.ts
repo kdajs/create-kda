@@ -1,5 +1,4 @@
 import day from 'dayjs'
-import { nanoid } from 'nanoid'
 
 function today (): string {
   return day().format('YYYY-MM-DD')
@@ -7,10 +6,6 @@ function today (): string {
 
 function now (): string {
   return day().format('YYYY-MM-DD HH:mm:ss')
-}
-
-function uuid (): string {
-  return new Date().getTime().toString() + nanoid()
 }
 
 async function sleep (time: number = 1000): Promise<void> {
@@ -22,9 +17,8 @@ function random (n: number, m: number): number {
 }
 
 export default {
-  now,
   today,
-  uuid,
+  now,
   sleep,
   random
 }

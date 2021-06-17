@@ -6,7 +6,7 @@
   "author": "lijialiang@joyy.sg",
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=14.0.0"
   },
   "bin": {
     "create-kda": "./index.mjs"
