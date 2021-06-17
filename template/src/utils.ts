@@ -1,5 +1,5 @@
 import day from 'dayjs'
-import shortid from 'shortid'
+import { nanoid } from 'nanoid'
 
 function today (): string {
   return day().format('YYYY-MM-DD')
@@ -10,7 +10,7 @@ function now (): string {
 }
 
 function uuid (): string {
-  return new Date().getTime().toString() + shortid.generate()
+  return new Date().getTime().toString() + nanoid()
 }
 
 async function sleep (time: number = 1000): Promise<void> {
