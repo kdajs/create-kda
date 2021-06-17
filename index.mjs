@@ -54,5 +54,5 @@ for (const file of templateFiles) {
 
 console.log('🎉 Successfully created project')
 console.log('👉 Get started with the following commands:\n')
-console.log('$ pnpm install')
-console.log('$ pnpm start')
+console.log('$ yarn install')
+console.log('$ yarn start')

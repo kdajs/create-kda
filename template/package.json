@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "dayjs": "^1.10.4",
-    "fp-ts": "^2.10.5",
     "io-ts": "^2.2.16",
     "kda": "{{kdaVersion}}",
     "typeorm": "^0.2.34"
