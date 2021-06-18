@@ -12,10 +12,10 @@
     "check:type": "tsc",
     "check:format": "eslint ./src/**/*.ts",
     "check": "run-s check:type check:format",
-    "run": "kda run test",
+    "run": "kda-bin run test",
     "start": "run-s build:dev run",
-    "release:test": "kda pm2 test --reload",
-    "release:production": "kda pm2 production --reload"
+    "release:test": "kda-bin pm2 test --reload",
+    "release:production": "kda-bin pm2 production --reload"
   },
   "gitHooks": {
     "pre-commit": "npm run check"
@@ -24,6 +24,7 @@
     "dayjs": "^1.10.4",
     "io-ts": "^2.2.16",
     "kda": "{{kdaVersion}}",
+    "kda-bin": "{{kdaBinVersion}}",
     "typeorm": "^0.2.34"
   },
   "devDependencies": {
