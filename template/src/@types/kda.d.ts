@@ -1,13 +1,13 @@
 import 'kda'
 // import models from '@/models'
 import utils from '@/utils'
-import clients from '@/clients'
+// import clients from '@/clients'
 
 declare module 'kda' {
   interface InjectContext {
     // models: typeof models
     utils: typeof utils
-    clients: typeof clients
+    // clients: typeof clients
   }
 
   interface CustomState {}

@@ -4,4 +4,4 @@ import utils from '@/utils'
 import clients from '@/clients'
 import { createServer } from 'kda'
 
-createServer({ utils, clients }).start(3000)
+createServer({ utils, clients }).start(parseInt(process.env.SERVER_PORT))
