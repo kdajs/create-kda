@@ -1,11 +1,5 @@
 image: harbor.duowan.com/ued/kda
 
-before_script:
-  - yarn config set registry https://npm-registry.duowan.com
-
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
 stages:
   - build
   - release
@@ -23,16 +17,16 @@ build:
     paths:
     - dist
     - package.json
+    - yarn.lock
   script:
-    - kda-cache
-    - yarn install
-    - yarn build:release
+    - kda-build ts
 
 .release:
   stage: release
   tags:
     - yyci_office
   script:
+    - yarn config set registry https://npm-registry.duowan.com
     - yarn global add @yy/rv-cli
     - rv .
 
